@@ -1,0 +1,5 @@
+{
+  "setupFilesAfterEnv": ["@testing-library/jest-dom"],
+  "testEnvironment": "jsdom",
+  "testMatch": ["**/?(*.)+(test).[jt]s?(x)"]
+}

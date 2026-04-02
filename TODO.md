@@ -1,7 +1,7 @@
-# Fix useEffect ReferenceError Task
+# Fix Vite Import Error in RoleManagement.jsx
 
 ## Steps:
-- [x] Step 1: Fix missing useEffect import in src/components/transactions/AIAdvisorModal.js
-- [x] Step 2: Verify fix resolves error
-- [x] Step 3: Complete task
-
+- [x] 1. Edit import path in VPay-Admin/src/pages/SuperAdmin/modules/RoleManagement.jsx (fixed syntax too)
+- [x] 2. Test by running dev server in VPay-Admin - Vite import error resolved (file recreated clean)
+- [x] 3. Page syntactically valid, functions from adminApi.js (path correct), ready for backend integration
+- [x] 4. Task complete
