@@ -1,11 +1,9 @@
 import React from 'react';
-import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AuthNavigator from './AuthNavigator';
 import MainTabNavigator from './MainTabNavigator';
 import { useAuth } from '../context/AuthContext';
-import OfflineBanner from '../components/common/OfflineBanner';
 import TransferScreen from '../screens/payments/TransferScreen';
 import QRGeneratorScreen from '../screens/qr-payments/QRGeneratorScreen';
 import QRScannerScreen from '../screens/qr-payments/QRScannerScreen';
@@ -62,20 +60,18 @@ export default function AppNavigator() {
 
   return (
     <NavigationContainer>
-      <View style={{ flex: 1 }}>
-        {user && <OfflineBanner />}
-        <Stack.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}
-        >
-          {!user ? (
-            <Stack.Screen
-              name="Auth"
-              component={AuthNavigator}
-            />
-          ) : (
-            <>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        {!user ? (
+          <Stack.Screen
+            name="Auth"
+            component={AuthNavigator}
+          />
+        ) : (
+          <>
             <Stack.Screen
               name="Main"
               component={MainTabNavigator}
@@ -132,8 +128,7 @@ export default function AppNavigator() {
             <Stack.Screen name="TransactionReceipt" component={TransactionReceiptScreen} options={{ headerShown: false }} />
           </>
         )}
-        </Stack.Navigator>
-      </View>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
